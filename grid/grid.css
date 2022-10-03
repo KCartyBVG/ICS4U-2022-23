@@ -1,0 +1,53 @@
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+body{
+    font-family: 'Open Sans', sans-serif;
+    font-size: 10px;
+    line-height: 1.5;
+    color: #333;
+    background: #f4f4f4;
+}
+
+.container{ /**use this for vendors page */
+    max-width: 960px;
+    margin: 100px auto;
+    padding: 10px;
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);/**can use flex box on a single box */
+    /* grid-auto-rows: repeat(200px, auto); 
+    grid-template-columns: repeat(3, 200px); */
+    gap: 10px;
+    height: 100vh; /**vertical height. fills up the height/100 percent of te height */
+
+}
+
+.item{
+    background-color: steelblue;
+    color: #fff;
+    font-size: 20px;
+    padding: 20px;
+    border: solid 1px skyblue;
+}
+
+/**create a template for my page, add what i want into them. should make whole page grid */
+
+.item:nth-of-type(1){ /**calling each item seperately */ 
+    background: black;
+    grid-column: 1/3; /**starts at one, ends before 3 */
+}
+
+.item:nth-of-type(3){
+    background: #333;
+    grid-row: 2/4;
+}
+
+.item:nth-of-type(4){
+    background-color: aquamarine;
+    grid-column: 2/4;
+    grid-column: 2/5;
+}

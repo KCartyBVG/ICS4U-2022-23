@@ -42,7 +42,6 @@ header{
     padding-top: 30px;
     min-height: 70px;
     border-bottom: #e8491d 3px solid;
-
 }
 
 header a{
@@ -86,7 +85,7 @@ header a:hover{
 /*showcase*/
 #showcase{
     min-height: 400px;
-    background-image:url('../img/showcase') no repeat 0 -400px; 
+    background-image:url('../img/showcase') no-repeat 0 -400px; 
     text-align: center;
     color: white;
 

@@ -1,0 +1,111 @@
+body{
+    font-family: Georgia, 'Times New Roman', Times, serif; /**maybe change font, add font size */
+    background-color: #f0f0f0;
+    font-size: 16px;
+    /* line-height: 1.5px; */
+    padding: 0;
+    margin: 0;
+    display: grid;
+    grid-template-columns:1fr 1fr 1fr;
+    grid-template-rows: 69px 1fr 1fr 1fr 54px;
+}
+
+.container{ 
+    margin: auto;
+    width: 90%;
+}
+
+/** Header*/
+header {
+    grid-column: 1/4;
+    background: #746E59;
+    color: #F8F0C6;
+    padding-top: 15px;
+    height: 50px;
+    border-bottom: #828D6B 4px solid;
+    padding-bottom: 0;
+}
+
+header a{
+    color: #F8F0C6;
+    text-decoration: none;
+    font-size: 19px;
+}
+
+header ul{
+    margin: 0;
+    padding: 0%;
+}
+
+header li{
+    display: inline;
+    padding: 0 30px 0 30px;
+}
+
+header #branding{
+    float: left;
+}
+
+header #branding h1{
+    margin: 0;
+}
+
+header nav{
+    float: right;
+    margin-top: 28px;
+}
+
+header .current a{
+    font-weight: bold;
+}
+
+header a:hover{
+    color: #828D6B;
+}
+
+#articles li .card-content{
+    grid-column: 2/4;
+}
+
+#articles img{
+    display: block;
+    width: 100%;
+    height: auto;
+    grid-column: 1/2;
+}
+
+
+
+
+
+
+
+/**Footer */
+footer{
+    grid-column: 1/4;
+    background: #746E59;
+    color: #F8F0C6;
+    height: 54px;
+    border-top: #828D6B 4px solid;
+    padding: 0px;
+    margin: 0;
+    text-align: center;
+}
+
+footer a{
+    color: #F8F0C6;
+    text-decoration: none;
+    font-size: 15px;
+}
+
+footer ul{
+    margin: 0; 
+    padding: 0%; 
+    /* list-style-type: circle; FIGURE OUT HOW TO BUT DOTS BETWEEN EACH LINK*/
+}
+ 
+
+footer li{
+    display: inline;
+    padding: 0 30px 0 30px; /**top right bottom left */
+}

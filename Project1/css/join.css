@@ -1,0 +1,169 @@
+body{
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    background-color: #f0f0f0;
+    font-size: 16px;
+    line-height: 1.5;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    grid-template-columns:3fr 1fr;/**two rows, last is quarter of the size */
+    grid-template-rows: 69px 1fr 54px; /**four rows*/
+}
+
+.container{ 
+    margin: auto;
+    width: 90%;
+}
+
+/** Header*/
+header {
+    grid-column: 1/4;
+    background: #746E59;
+    color: #F8F0C6;
+    padding-top: 15px;
+    height: 50px;
+    border-bottom: #828D6B 4px solid;
+    padding-bottom: 0;
+}
+
+header a{
+    color: #F8F0C6;
+    text-decoration: none; /** removes the underline */
+    /**could make it upper case? */
+    font-size: 19px;
+}
+
+header ul{
+    margin: 0;
+    padding: 0%;
+}
+
+header li{
+    display: inline; /**will not start on a new line */
+    padding: 0 30px 0 30px; /**top right bottom left */
+}
+
+header #branding{
+    float: left;
+}
+
+header #branding h1{
+    margin: 0;
+}
+
+header nav{
+    float: right;
+    margin-top: 28px;
+}
+
+header .current a{
+    font-weight: bold;
+}
+
+header a:hover{
+    color: #828D6B;
+}
+
+/**Main */
+main{
+    grid-column: 1/2;
+    color: #192018;
+}
+
+#main li{
+    list-style: none;
+    border: #cccccc solid 1px;
+    background-color: #ffffff;
+    padding: 20px;
+    margin-bottom: 10px;
+}
+
+#main li h2{
+    margin: 0;
+}
+
+#main h1{
+    margin-left: 40px;
+    padding: 10px;
+    /* font-size: 20px; */
+    /* color: #3d3d3d; */
+}
+
+/**Form */
+#join{
+    grid-column: 2/4;
+    margin: auto;
+    margin-left: 0px;
+    margin-top: 140px;
+    padding: 20px;
+    background: #828D6B;
+    width: 250px;
+    height: 500px;
+}
+
+#join label{
+    font-size: 17px;
+    font-weight: bold;
+    /* margin: 15px 0 15px 0; */
+}
+
+#join h3{
+    color: #F8F0C6;
+    font-size: 25px;
+}
+
+#join input{
+    width: 80%;
+    height: 30px;
+    margin: 5px 0 5px 0;
+}
+
+#join ::placeholder{
+    font-size: 15px;
+}
+
+.button_1{
+    background: #F8F0C6;
+    color: #746E59;
+    border: none;
+    height: 38px;
+    margin: 20px 0 20px 0;
+    padding: 0 15px 0 15px;
+    font-size: 17px;
+}
+
+.button_1:hover{
+    background: #746E59;
+    color: #F8F0C6;
+}
+
+/**Footer */
+footer{
+    grid-column: 1/4;
+    background: #746E59;
+    color: #F8F0C6;
+    height: 54px;
+    border-top: #828D6B 4px solid;
+    padding: 0px;
+    margin: 0;
+    text-align: center;
+    line-height: normal;
+}
+
+footer a{
+    color: #F8F0C6;
+    text-decoration: none;
+    font-size: 15px;
+}
+
+footer ul{
+    margin: 0; 
+    padding: 0%; 
+    /* list-style-type: circle; FIGURE OUT HOW TO BUT DOTS BETWEEN EACH LINK*/
+}
+ 
+
+footer li{
+    display: inline;
+    padding: 0 30px 0 30px; /**top right bottom left */
+}

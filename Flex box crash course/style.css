@@ -1,0 +1,47 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    font-family: Arial, Helvetica, sans-serif
+}
+
+.flex-container{
+    display:flex;
+    background-color: #f4f4f4;
+    /**always on the main axis*/
+    /* justify-content: end; */
+    /**always on the cross axis*/
+    /* align-items: start; */
+
+    /*flex-wrap: wrap; /**if it cant fit something, it will move it to the next line */
+}
+
+.item{
+    flex: 1 0 0; /**flex grow, flex shrink, basis */
+    /**flex:1 makes all boxes even */
+    height: 100px;
+    background: #254de4;
+    color: white;
+    margin: 10px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.item:nth-last-of-type(1) {
+    flex-shrink: 1;
+}
+.item:nth-last-of-type(2) {
+   /* order: 1; changes order*/
+   flex-shrink: 2;
+    
+}
+
+.item:nth-last-of-type(3) {
+    flex-shrink: 3;
+
+}
