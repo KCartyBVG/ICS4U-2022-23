@@ -1,13 +1,16 @@
 body{
-    font-family: Georgia, 'Times New Roman', Times, serif; /**maybe change font, add font size */
+    font-family: Georgia, 'Times New Roman', Times, serif;
     background-color: #f0f0f0;
     font-size: 16px;
-    /* line-height: 1.5px; */
     padding: 0;
     margin: 0;
+    line-height: 1.5;
+
+
+    /**grid */
     display: grid;
     grid-template-columns:1fr 1fr 1fr;
-    grid-template-rows: 69px 1fr 1fr 1fr 54px;
+    grid-template-rows: 0.1fr 0.1fr 1fr 0.2fr;
 }
 
 .container{ 
@@ -21,9 +24,8 @@ header {
     background: #746E59;
     color: #F8F0C6;
     padding-top: 15px;
-    height: 50px;
+    padding-bottom: 10px;
     border-bottom: #828D6B 4px solid;
-    padding-bottom: 0;
 }
 
 header a{
@@ -34,26 +36,28 @@ header a{
 
 header ul{
     margin: 0;
-    padding: 0%;
+    padding: 0;
 }
 
 header li{
+    padding-left:30px;
     display: inline;
-    padding: 0 30px 0 30px;
-}
-
-header #branding{
-    float: left;
+    align-self: center;
 }
 
 header #branding h1{
-    margin: 0;
+    margin: auto;
+    font-size: 32px;
 }
 
-header nav{
-    float: right;
-    margin-top: 28px;
+header nav .container{
+    /**flexbox */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
 }
+
 
 header .current a{
     font-weight: bold;
@@ -63,33 +67,68 @@ header a:hover{
     color: #828D6B;
 }
 
-#articles li .card-content{
-    grid-column: 2/4;
+/**page header */
+#title{
+    grid-column: 1/4;
+    text-align: center;
+    margin: auto;
 }
 
-#articles img{
+/**articles */
+#section-1, #section-2, #section-3{
+    text-align: center;
+    padding: 1em 1em 1em;
+    line-height: 1.5;
+}
+
+#section-1 img, #section-2 img, #section-3 img{
     display: block;
     width: 100%;
     height: auto;
-    grid-column: 1/2;
 }
 
+#section-1 ul, #section-2 ul, #section-3 ul{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
 
+#section-1 li, #section-2 li, #section-3 li{
+    margin-bottom: 1em;
+    background: #f4f4f4;
+    border: #746E59 solid 1px;
+}
 
+#section-1 .card-content, #section-2 .card-content, #section-3 .card-content{
+    padding: 0 1em 0 1em;
+    background: #f4f4f4;
+}
 
+#section-1 a, #section-2 a, #section-3 a, #section-1 a:visited, #section-2 a:visited, #section-3 a:visited{
+    text-decoration: none;
+    color: #333;
+}
 
-
+#section-1 a:hover, #section-2 a:hover, #section-3 a:hover{
+    text-decoration: underline;
+}
 
 /**Footer */
 footer{
     grid-column: 1/4;
     background: #746E59;
     color: #F8F0C6;
-    height: 54px;
     border-top: #828D6B 4px solid;
     padding: 0px;
     margin: 0;
     text-align: center;
+}
+
+footer .container{
+    /**flexbox */
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
 }
 
 footer a{
@@ -98,14 +137,26 @@ footer a{
     font-size: 15px;
 }
 
-footer ul{
-    margin: 0; 
-    padding: 0%; 
-    /* list-style-type: circle; FIGURE OUT HOW TO BUT DOTS BETWEEN EACH LINK*/
-}
- 
-
 footer li{
     display: inline;
-    padding: 0 30px 0 30px; /**top right bottom left */
+    padding: 0 30px 0 30px;
+    align-self: center;
+}
+
+/**Media Queries */
+@media(max-width:768px) {
+    body{
+        grid-template-rows: 0.1fr 70px 1fr 0.2fr;
+    }
+
+    header #branding, header nav, header nav li{
+        float: none;
+        text-align: center;
+        width: 100%;
+        margin: 0;
+    }
+
+    #section-1, #section-2, #section-3{
+        grid-column: 1/4;
+    }
 }

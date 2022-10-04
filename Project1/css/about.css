@@ -1,13 +1,16 @@
 body{
-    font-family: Georgia, 'Times New Roman', Times, serif; /**maybe change font, add font size */
+    font-family: Georgia, 'Times New Roman', Times, serif;
     background-color: #f0f0f0;
     font-size: 16px;
-    /* line-height: 1.5px; */
     padding: 0;
     margin: 0;
+    line-height: 1.5;
+
+
+    /**grid */
     display: grid;
-    grid-template-columns:4fr 1fr 1fr;
-    grid-template-rows: 69px 2fr 1.3fr 54px;
+    grid-template-columns:4fr 2fr;
+    grid-template-rows: 0.1fr 2fr 1.3fr 0.2fr;
 }
 
 .container{ 
@@ -21,9 +24,8 @@ header {
     background: #746E59;
     color: #F8F0C6;
     padding-top: 15px;
-    height: 50px;
+    padding-bottom: 10px;
     border-bottom: #828D6B 4px solid;
-    padding-bottom: 0;
 }
 
 header a{
@@ -34,25 +36,26 @@ header a{
 
 header ul{
     margin: 0;
-    padding: 0%;
+    padding: 0;
 }
 
 header li{
+    padding-left:30px;
     display: inline;
-    padding: 0 30px 0 30px;
-}
-
-header #branding{
-    float: left;
+    align-self: center;
 }
 
 header #branding h1{
-    margin: 0;
+    margin: auto;
+    font-size: 32px;
 }
 
-header nav{
-    float: right;
-    margin-top: 28px;
+header nav .container{
+    /** flexbox*/
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
 }
 
 header .current a{
@@ -63,17 +66,119 @@ header a:hover{
     color: #828D6B;
 }
 
+/**Section-a */
+#section-a{
+    grid-column: 1/2;
+    line-height: 1.5;
+    margin: 0 30px 0 40px;
+}
+
+#section-a #blurb{
+    border: #746E59 solid 1px;
+    padding: 20px;
+    margin-top: 0;
+}
+
+#section-a h1{
+    text-align: center;
+    background-color: #828D6B;
+    border: #746E59 solid 1px;
+    margin-bottom: 0;
+}
+
+/**Section-b */
+#section-b{
+    grid-column: 2/3;
+    grid-row: 2/4;
+    line-height: 1.5;
+}
+
+#section-b h1{
+    text-align: center;
+    background-color: #828D6B;
+    border: #746E59 solid 1px;
+}
+
+#section-b li{
+    border: #746E59 solid 1px;
+    list-style: none;
+    padding: 0 20px 0 20px;
+    margin: 10px;
+}
+
+#section-b ul{
+    padding: 0;
+    align-content: center;
+    margin: auto;
+    align-items: center;
+}
+
+#section-b h2{
+    font-size: 20px;
+}
+
+#section-b .btn{
+    text-decoration: none;
+    font-size: 15px;
+    margin: auto;
+    background: #828D6B;
+    color: black;
+    padding: 8px;
+    border: #746E59 solid 1px;
+}
+
+#section-b li:last-child{
+    height: 140px;
+}
+
+/**Section-c */
+#section-c{
+    grid-column: 1/2;
+    line-height: 1.5;
+    margin: 0 30px 0 40px;
+}
+
+#section-c h1{
+    text-align: center;
+    background-color: #828D6B;
+    border: #746E59 solid 1px;
+}
+
+#section-c a{
+    color: #f0f0f0;
+}
+
+#section-c ul{
+    list-style: none;
+    padding-inline-start: 0;
+    text-align: center;
+}
+
+#section-c li{
+    display: inline;
+    padding: 10px;
+}
+
+#section-c img{
+    width: 70px;
+}
 
 /**Footer */
 footer{
     grid-column: 1/4;
     background: #746E59;
     color: #F8F0C6;
-    height: 54px;
     border-top: #828D6B 4px solid;
     padding: 0px;
     margin: 0;
     text-align: center;
+}
+
+footer .container{
+    /**flexbox */
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
 }
 
 footer a{
@@ -82,14 +187,36 @@ footer a{
     font-size: 15px;
 }
 
-footer ul{
-    margin: 0; 
-    padding: 0%; 
-    /* list-style-type: circle; FIGURE OUT HOW TO BUT DOTS BETWEEN EACH LINK*/
-}
- 
-
 footer li{
     display: inline;
-    padding: 0 30px 0 30px; /**top right bottom left */
+    padding: 0 30px 0 30px;
+    align-self: center;
+}
+
+/**Media Queries */
+@media(max-width:768px) {
+    body{
+        grid-template-rows: 0.2fr 0.8fr 1fr 0.2fr;
+    }
+
+    header #branding, header nav, header nav li{
+        float: none;
+        text-align: center;
+        width: 100%;
+        margin: 0;
+    }
+
+    #section-a{
+        grid-column: 1/3;
+    }
+
+    #section-b{
+        grid-column: 1/3;
+        grid-row: 3/4;
+        margin: 0 30px 0 40px;
+    }
+
+    #section-c{
+        grid-column: 1/3;
+    }
 }

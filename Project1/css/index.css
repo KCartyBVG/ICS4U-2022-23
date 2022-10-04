@@ -1,13 +1,15 @@
 body{
-    font-family: Georgia, 'Times New Roman', Times, serif; /**maybe change font, add font size */
+    font-family: Georgia, 'Times New Roman', Times, serif;
     background-color: #f0f0f0;
     font-size: 16px;
-    /* line-height: 1.5px; */
     padding: 0;
     margin: 0;
+    line-height: 1.5;
+
+    /**grid */
     display: grid;
-    grid-template-columns:4fr 1fr 1fr;/**two rows, last is quarter of the size */
-    grid-template-rows: 69px 1.5fr 250px 54px; /**four rows*/
+    grid-template-columns:4fr 1fr 1fr;
+    grid-template-rows: 0.1fr 1.3fr 1fr 0.2fr;
 }
 
 .container{ 
@@ -21,39 +23,38 @@ header {
     background: #746E59;
     color: #F8F0C6;
     padding-top: 15px;
-    height: 50px;
+    padding-bottom: 10px;
     border-bottom: #828D6B 4px solid;
-    padding-bottom: 0;
 }
 
 header a{
     color: #F8F0C6;
-    text-decoration: none; /** removes the underline */
-    /**could make it upper case? */
+    text-decoration: none;
     font-size: 19px;
 }
 
 header ul{
     margin: 0;
-    padding: 0%;
+    padding: 0;
 }
 
 header li{
-    display: inline; /**will not start on a new line */
-    padding: 0 30px 0 30px; /**top right bottom left */
-}
-
-header #branding{
-    float: left;
+    padding-left:30px;
+    display: inline;
+    align-self: center;
 }
 
 header #branding h1{
-    margin: 0;
+    margin: auto;
+    font-size: 32px;
 }
 
-header nav{
-    float: right;
-    margin-top: 28px;
+header nav .container{
+    /**flexbox */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
 }
 
 header .current a{
@@ -64,34 +65,39 @@ header a:hover{
     color: #828D6B;
 }
 
-
 /**showcase */
 #showcase{
     grid-column: 1/4;
     grid-row: 2/3;
-
-    min-height: 450px;
     background:url('../img/market1.jpg');
     background-position: center;
-    background-repeat: no-repeat;
     background-size: cover;
-    width: 100%;
+    width:100%;
 }
 
 /**blog */
 #blog{
     grid-column: 1/3;
-    padding-left: 20px;
-    height: 200px;
+    padding: 0 15px 0 15px;
+    margin: 20px;
+    line-height: 1.5;
+    border: #746E59 solid 1px;
+    background-color: #ffffff;
+    text-align: center;
+}
+
+#blog h1{
+    text-align: center;
+    background: #828D6B;
 }
 
 
 /**updates */
 #updates{
+    padding-top: 25px;
     color: #F8F0C6;
     background: #746E59;
     text-align: center;
-    height: 200px;
 }
 
 #updates h1{
@@ -99,11 +105,9 @@ header a:hover{
 }
 
 #updates .btn{
-    text-decoration: none;
     font-size: 15px;
     margin: auto;
-    background: #F8F0C6;
-    color: #746E59;
+    color: #F8F0C6;
     padding: 8px;
 }
 
@@ -112,11 +116,17 @@ footer{
     grid-column: 1/4;
     background: #746E59;
     color: #F8F0C6;
-    height: 54px;
     border-top: #828D6B 4px solid;
     padding: 0px;
     margin: 0;
     text-align: center;
+}
+
+footer .container{
+    /**flexbox*/
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
 }
 
 footer a{
@@ -125,16 +135,65 @@ footer a{
     font-size: 15px;
 }
 
-footer ul{
-    margin: 0; 
-    padding: 0%; 
-    /* list-style-type: circle; FIGURE OUT HOW TO BUT DOTS BETWEEN EACH LINK*/
-}
- 
-
 footer li{
     display: inline;
-    padding: 0 30px 0 30px; /**top right bottom left */
+    padding: 0 30px 0 30px;
+    align-self: center;
 }
+
+/**Media Queries */
+@media(max-width:835px) {
+    body{
+        grid-template-rows: 0.2fr 0.5fr 1fr 0.2fr;
+    }
+
+    header #branding, header nav, header nav li{
+        float: none;
+        text-align: center;
+        width: 100%;
+        margin: 0;
+    }
+
+    #showcase{
+        height: 350px;
+    }
+
+    #blog{
+        grid-column: 1/4;
+    }
+
+    #updates{
+        grid-column: 1/4;
+        padding-bottom:10px;
+        padding-top: 0;
+    }
+}
+@media(max-width:480px) {
+    body{
+        grid-template-rows: 0.2fr 1fr 0.2fr;
+    }
+    header #branding, header nav, header nav li{
+        float: none;
+        text-align: center;
+        width: 100%;
+        margin: 0;
+    }
+
+    #showcase{
+        display: none;
+    }
+
+    #blog{
+        grid-column: 1/4;
+    }
+
+    #updates{
+        grid-column: 1/4;
+        padding-bottom:10px;
+        padding-top: 0;
+    }
+}
+
+
 
 
