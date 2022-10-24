@@ -11,6 +11,9 @@ const map2 = {String, String};
 //map.containsKey(key) - returns true if the key is in the map, false otherwise
 //map.remove(key) - removes the key/value pair for this key if present. does nothing if the key is not present.
 
+
+/**MAP 1 */
+
 {//map share
     if (map.containsKey('a')) {
         var tmp = map.get('a'); //have to use var?
