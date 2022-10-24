@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+   <meta charset="utf-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Simple DOM Example</title>
+</head>
+
+<body>
+   <section>
+      <img id = "dino1" src="images/dinosaur.png"
+         alt="A red Tyrannosaurus Rex: A two legged dinosaur standing upright like a human, with small arms, and a large head with lots of sharp teeth.">
+       <img id = "dino2" src="images/dinosaur.png"
+         alt="A red Tyrannosaurus Rex: A two legged dinosaur standing upright like a human, with small arms, and a large head with lots of sharp teeth.">
+      <p>Here we will add a link to the <a href="https://www.mozilla.org/">Mozilla homepage</a></p>
+   </section>
+
+   <!-- This way the page is loaded before the script runs -->
+</body>
+<script>
+    //let dinosaurs = document.querySelectorAll('img'); //grabs all of type
+    //let dino = document.querySelector('img'); //just grabs first of type. aka first dino
+
+    // let anchor = document.querySelector('a');
+    // anchor.textContent = "Mozilla Developer Network";
+    // anchor.href = "https://developer.mozilla.org";
+
+    const section = document.querySelector('section');
+
+    const para = document.createElement('p');
+    para.textContent = 'We hop youenjoyed the ride';
+
+    section.appendChild(para);
+    // document.querySelector('p').appendChild(text);
+
+    // iterate through all pararaphs and add text to it.
+    
+    const text = document.createTextMode('--the premier source for web development');
+    const paragraphs = document.querySelector('p');
+    for (let i = 0; i<paragraph.length; i++) {
+        paragraph[i].appendChild(text);
+    }
+
+</script>
+</html>
