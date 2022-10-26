@@ -19,9 +19,7 @@
 </head>
 
 <body>
-
    <h1>My shopping list</h1>
-
    <div>
       <label for="item">Enter a new item:</label>
       <input type="text" name="item" id="item">
@@ -29,18 +27,16 @@
 
       <!--<button onclick="addItem();">Add item</button>-->
    </div>
-
    <ul>
-
+      <!--empty list. adds shopping items to this-->
    </ul>
-
    <script>
-      const input = document.querySelector('#item');
+      const input = document.querySelector('#item'); /*selecting the id=item*/
       const btn = document.querySelector('#addItem');
-      const itemList = document.querySelector('ul');
+      const itemList = document.querySelector('ul'); /*selecting the ul item*/
 
       const addItem = function addItem() {
-         const itemText = input.value;
+         const itemText = input.value; //itemText is what the user inputs
          if (itemText !== undefined && itemText !== '') {
             const li = document.createElement('li');
             li.textContent = itemText;
@@ -55,8 +51,6 @@
             delButton.addEventListener('click', () => delButton.parentElement.remove());
 
             li.appendChild(delButton);
-
-
             input.value = '';
             item.focus();
          }
@@ -66,6 +60,8 @@
 
       //btn.addEventListener('click', () => addItem());
       btn.addEventListener('click', addItem);
+      //takes the event to listen for (click) & second argument to be called whenever the described event gets called
+
       /*
          btn.onclick = function addItem() {
             console.log('Adding Item...');
