@@ -1,0 +1,426 @@
+wasnt sure how to submit this part.this is what my teams array looks like in my local storage
+
+[
+  {
+    "id": 1,
+    "img": "/Sports Standings/img/Sky.png",
+    "Name": "Chicago Sky",
+    "W": 1,
+    "L": 1,
+    "PCT": "0.333",
+    "GB": 1,
+    "HOME": "1-0",
+    "ROAD": "0-1",
+    "STREAK": "L1",
+    "games": [
+      {},
+      {
+        "opponent": 12,
+        "ourscore": "105",
+        "opponentscore": "104",
+        "date": "2022-02-17"
+      },
+      {
+        "opponent": 12,
+        "ourscore": "96",
+        "opponentscore": "104",
+        "date": "2022-07-19"
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "img": "/Sports Standings/img/Sun.png",
+    "Name": "Conneticut Sun",
+    "W": 3,
+    "L": 1,
+    "PCT": "0.750",
+    "GB": 0,
+    "HOME": "3-1",
+    "ROAD": "0-0",
+    "STREAK": "W2",
+    "games": [
+      {
+        "opponent": 6,
+        "ourscore": "101",
+        "opponentscore": "97",
+        "date": "2022-02-27"
+      },
+      {
+        "opponent": 11,
+        "ourscore": "85",
+        "opponentscore": "98",
+        "date": "2022-05-17"
+      },
+      {
+        "opponent": 4,
+        "ourscore": "106",
+        "opponentscore": "100",
+        "date": "2022-11-08"
+      },
+      {
+        "opponent": 5,
+        "ourscore": "120",
+        "opponentscore": "101",
+        "date": "2022-11-08"
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "img": "/Sports Standings/img/storm.png",
+    "Name": "Seattle Storm",
+    "W": 2,
+    "L": 2,
+    "PCT": "0.500",
+    "GB": 1,
+    "HOME": "0-0",
+    "ROAD": "2-2",
+    "STREAK": "L1",
+    "games": [
+      {
+        "opponent": 11,
+        "ourscore": "107",
+        "opponentscore": "98",
+        "date": "2022-01-27"
+      },
+      {
+        "opponent": 8,
+        "ourscore": "99",
+        "opponentscore": "107",
+        "date": "2022-01-01"
+      },
+      {
+        "opponent": 9,
+        "ourscore": "111",
+        "opponentscore": "101",
+        "date": "2022-02-12"
+      },
+      {
+        "opponent": 10,
+        "ourscore": "83",
+        "opponentscore": "99",
+        "date": "2022-03-18"
+      }
+    ]
+  },
+  {
+    "id": 4,
+    "img": "/Sports Standings/img/mystics.png",
+    "Name": "Washington Mystics",
+    "W": 3,
+    "L": 2,
+    "PCT": "0.600",
+    "GB": 0.5,
+    "HOME": "2-1",
+    "ROAD": "1-1",
+    "STREAK": "W1",
+    "games": [
+      {
+        "opponent": 8,
+        "ourscore": "97",
+        "opponentscore": "85",
+        "date": "2022-02-17"
+      },
+      {
+        "opponent": 9,
+        "ourscore": "92",
+        "opponentscore": "107",
+        "date": "2022-04-02"
+      },
+      {
+        "opponent": 8,
+        "ourscore": "92",
+        "opponentscore": "79",
+        "date": "2022-01-21"
+      },
+      {
+        "opponent": 2,
+        "ourscore": "100",
+        "opponentscore": "106",
+        "date": "2022-11-08"
+      },
+      {
+        "opponent": 8,
+        "ourscore": "120",
+        "opponentscore": "110",
+        "date": "2022-11-17"
+      }
+    ]
+  },
+  {
+    "id": 5,
+    "img": "/Sports Standings/img/wings.png",
+    "Name": "Dallas Wings",
+    "W": 2,
+    "L": 2,
+    "PCT": "0.500",
+    "GB": 1,
+    "HOME": "1-0",
+    "ROAD": "1-2",
+    "STREAK": "L1",
+    "games": [
+      {
+        "opponent": 12,
+        "ourscore": "109",
+        "opponentscore": "108",
+        "date": "2022-01-11"
+      },
+      {
+        "opponent": 6,
+        "ourscore": "89",
+        "opponentscore": "102",
+        "date": "2022-04-10"
+      },
+      {
+        "opponent": 9,
+        "ourscore": "100",
+        "opponentscore": "94",
+        "date": "2022-06-03"
+      },
+      {
+        "opponent": 2,
+        "ourscore": "101",
+        "opponentscore": "120",
+        "date": "2022-11-08"
+      }
+    ]
+  },
+  {
+    "id": 6,
+    "img": "/Sports Standings/img/liberty.png",
+    "Name": "New York Liberty",
+    "W": 1,
+    "L": 1,
+    "PCT": "0.500",
+    "GB": 1,
+    "HOME": "1-0",
+    "ROAD": "0-1",
+    "STREAK": "W1",
+    "games": [
+      {
+        "opponent": 2,
+        "ourscore": "97",
+        "opponentscore": "101",
+        "date": "2022-02-27"
+      },
+      {
+        "opponent": 5,
+        "ourscore": "102",
+        "opponentscore": "89",
+        "date": "2022-04-10"
+      }
+    ]
+  },
+  {
+    "id": 7,
+    "img": "/Sports Standings/img/mercury.png",
+    "Name": "Phoenix Mercury",
+    "W": 3,
+    "L": 1,
+    "PCT": "0.750",
+    "GB": 0,
+    "HOME": "2-1",
+    "ROAD": "1-0",
+    "STREAK": "W1",
+    "games": [
+      {
+        "opponent": 10,
+        "ourscore": "102",
+        "opponentscore": "94",
+        "date": "2022-01-20"
+      },
+      {
+        "opponent": 10,
+        "ourscore": "108",
+        "opponentscore": "92",
+        "date": "2022-03-03"
+      },
+      {
+        "opponent": 12,
+        "ourscore": "83",
+        "opponentscore": "100",
+        "date": "2022-03-12"
+      },
+      {
+        "opponent": 10,
+        "ourscore": "109",
+        "opponentscore": "101",
+        "date": "2022-05-21"
+      }
+    ]
+  },
+  {
+    "id": 8,
+    "img": "/Sports Standings/img/lynx.png",
+    "Name": "Minnesota Lynx",
+    "W": 1,
+    "L": 3,
+    "PCT": "0.250",
+    "GB": 2,
+    "HOME": "1-1",
+    "ROAD": "0-2",
+    "STREAK": "L3",
+    "games": [
+      {
+        "opponent": 3,
+        "ourscore": "107",
+        "opponentscore": "99",
+        "date": "2022-01-01"
+      },
+      {
+        "opponent": 4,
+        "ourscore": "85",
+        "opponentscore": "97",
+        "date": "2022-02-17"
+      },
+      {
+        "opponent": 4,
+        "ourscore": "79",
+        "opponentscore": "92",
+        "date": "2022-01-21"
+      },
+      {
+        "opponent": 4,
+        "ourscore": "110",
+        "opponentscore": "120",
+        "date": "2022-11-17"
+      }
+    ]
+  },
+  {
+    "id": 9,
+    "img": "/Sports Standings/img/dream.png",
+    "Name": "Atlanta Dream",
+    "W": 1,
+    "L": 2,
+    "PCT": "0.333",
+    "GB": 1.5,
+    "CONF": "0-0",
+    "HOME": "0-2",
+    "ROAD": "1-0",
+    "STREAK": "L1",
+    "games": [
+      {
+        "opponent": 3,
+        "ourscore": "101",
+        "opponentscore": "111",
+        "date": "2022-02-12"
+      },
+      {
+        "opponent": 4,
+        "ourscore": "107",
+        "opponentscore": "92",
+        "date": "2022-04-02"
+      },
+      {
+        "opponent": 5,
+        "ourscore": "94",
+        "opponentscore": "100",
+        "date": "2022-06-03"
+      }
+    ]
+  },
+  {
+    "id": 10,
+    "img": "/Sports Standings/img/sparks.png",
+    "Name": "Los Angeles Sparks",
+    "W": 1,
+    "L": 3,
+    "PCT": "0.250",
+    "GB": 2,
+    "HOME": "1-1",
+    "ROAD": "0-2",
+    "STREAK": "L1",
+    "games": [
+      {
+        "opponent": 7,
+        "ourscore": "94",
+        "opponentscore": "102",
+        "date": "2022-01-20"
+      },
+      {
+        "opponent": 7,
+        "ourscore": "92",
+        "opponentscore": "108",
+        "date": "2022-03-03"
+      },
+      {
+        "opponent": 3,
+        "ourscore": "99",
+        "opponentscore": "83",
+        "date": "2022-03-18"
+      },
+      {
+        "opponent": 7,
+        "ourscore": "101",
+        "opponentscore": "109",
+        "date": "2022-05-21"
+      }
+    ]
+  },
+  {
+    "id": 11,
+    "img": "/Sports Standings/img/fever.png",
+    "Name": "Indiana Fever",
+    "W": 1,
+    "L": 1,
+    "PCT": "0.500",
+    "GB": 1,
+    "HOME": "0-1",
+    "ROAD": "1-0",
+    "STREAK": "W1",
+    "games": [
+      {
+        "opponent": 3,
+        "ourscore": "98",
+        "opponentscore": "107",
+        "date": "2022-01-27"
+      },
+      {
+        "opponent": 2,
+        "ourscore": "98",
+        "opponentscore": "85",
+        "date": "2022-05-17"
+      }
+    ]
+  },
+  {
+    "id": 12,
+    "img": "/Sports Standings/img/aces.png",
+    "Name": "Las Vegas Aces",
+    "W": 2,
+    "L": 2,
+    "PCT": "0.500",
+    "GB": 1,
+    "HOME": "1-0",
+    "ROAD": "1-2",
+    "STREAK": "W2",
+    "games": [
+      {
+        "opponent": 5,
+        "ourscore": "108",
+        "opponentscore": "109",
+        "date": "2022-01-11"
+      },
+      {
+        "opponent": 1,
+        "ourscore": "104",
+        "opponentscore": "105",
+        "date": "2022-02-17"
+      },
+      {
+        "opponent": 7,
+        "ourscore": "100",
+        "opponentscore": "83",
+        "date": "2022-03-12"
+      },
+      {
+        "opponent": 1,
+        "ourscore": "104",
+        "opponentscore": "96",
+        "date": "2022-07-19"
+      }
+    ]
+  }
+]

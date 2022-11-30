@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teams | WNBA</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+    <style>
+      #gameText{
+        text-align: center;
+      }
+      div#nextPageDiv{
+        text-align: left;
+      }
+      div#prevPageDiv{
+        text-align: right;
+      }
+      body{
+        min-height:100vh;
+      }
+    </style>
+</head>
+<body class="has-background-light" onload="start();">
+    <nav class="navbar is-dark" role="navigation" aria-label="main navigation">
+      <div class="navbar-brand">
+        <a class="navbar-item" href="standings.html">
+          <img src="/Sports Standings/img/wnba-secondary-logo.svg" width="112" height="28">
+        </a>
+    
+        <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+        </a>
+      </div>
+    
+      <div id="navbarBasicExample" class="navbar-menu">
+        <div class="navbar-start">
+          <a href="standings.html" class="navbar-item">
+            Standings
+          </a>
+    
+          <a href="admin.html" class="navbar-item">
+            Admin
+          </a>
+    
+          <div class="navbar-item has-dropdown is-hoverable">
+            <a class="navbar-link">
+              Teams
+            </a>
+
+            <div class="navbar-dropdown">
+              <a href="teams.html?id=9" class="navbar-item">
+                  <img src="/Sports Standings/img/dream.png" class="image is-24x24" alt="">
+                  <p class="pl-2">Atlantis Dream</p>
+              </a>
+              <a href="teams.html?id=1" class="navbar-item">
+                  <img src="/Sports Standings/img/Sky.png" class="image is-24x24" alt="">
+                  <p class="pl-2">Chicago Sky</p>
+              </a>
+              <a href="teams.html?id=2" class="navbar-item">
+                  <img src="/Sports Standings/img/Sun.png" class="image is-24x24" alt="">
+                  <p class="pl-2">Conneticut Sun</p>
+              </a>
+              <a href="teams.html?id=5" class="navbar-item">
+                  <img src="/Sports Standings/img/wings.png" class="image is-24x24" alt="">
+                  <p class="pl-2">Dallas Wings</p>
+              </a>
+              <a href="teams.html?id=11" class="navbar-item">
+                  <img src="/Sports Standings/img/fever.png" class="image is-24x24" alt="">
+                  <p class="pl-2">Indiana Fever</p>
+              </a>
+              <a href="teams.html?id=12" class="navbar-item">
+                  <img src="/Sports Standings/img/Aces.png" class="image is-24x24" alt="">
+                  <p class="pl-2">Las Vegas Aces</p>
+              </a>
+              <a href="teams.html?id=10" class="navbar-item">
+                  <img src="/Sports Standings/img/sparks.png" class="image is-24x24" alt="">
+                  <p class="pl-2">Los Angeles Sparks</p>
+              </a>
+              <a href="teams.html?id=8" class="navbar-item">
+                  <img src="/Sports Standings/img/lynx.png" class="image is-24x24" alt="">
+                  <p class="pl-2">Minnesota Lynx</p>
+              </a>
+              <a href="teams.html?id=6" class="navbar-item">
+                  <img src="/Sports Standings/img/liberty.png" class="image is-24x24" alt="">
+                  <p class="pl-2">New York Liberty</p>
+              </a>
+              <a href="teams.html?id=7" class="navbar-item">
+                  <img src="/Sports Standings/img/mercury.png" class="image is-24x24" alt="">
+                  <p class="pl-2">Phoenix Mercury</p>
+              </a>
+              <a href="teams.html?id=3" class="navbar-item">
+                  <img src="/Sports Standings/img/storm.png" class="image is-24x24" alt="">
+                  <p class="pl-2">Seattle Storm</p>
+              </a>
+              <a href="teams.html?id=4" class="navbar-item">
+                  <img src="/Sports Standings/img/mystics.png" class="image is-24x24" alt="">
+                  <p class="pl-2">Washington Mystics</p>
+              </a>
+            </div>
+          </div>
+        </div>
+        </div>
+      </div>
+    </nav>
+    <div class="columns has-background-grey-lighter m-auto">
+      <div class="column is-two-fifths columns m-auto ">
+        <div id="logo" class="column is-two-fifths m-auto"></div>
+        <div id="title" class="title column is-three-fifths m-auto"></div>
+      </div>
+      <div class="tile column is-one-fifth">
+        <div class="tile box is-child">
+          <h1>Wins</h1>
+          <p id="wins" class="is-size-2"></p>
+        </div>
+      </div>
+      <div class="tile column is-one-fifth">
+        <div class="tile box is-child">
+          <h1>Losses</h1>
+          <p id="losses" class = "is-size-2"></p>
+        </div>
+      </div>
+      <div class="tile column is-one-fifth">
+        <div class="tile box  is-child">
+          <h1>Win Percentage</h1>
+          <p id="pct" class="is-size-2"></p>
+        </div>
+      </div>
+    </div>
+
+    <div id="section" class="columns m-6"> <!--date filter-->
+      <!--start-->
+      <div class="column is-one-fifth">
+        <label for="start">Start date:</label>
+        <input class="input" type="date" id="start"
+          value=""
+          min="2022-01-01" max="2022-12-31">
+      </div>
+      <!--end-->
+      <div class="column is-one-fifth">
+        <label for="end">End date:</label>
+        <input class="input" type="date" id="end"
+          value=""
+          min="2022-01-01" max="2022-12-31">
+      </div>
+      <!--filter-->
+      <div class="column is-one-fifth mt-5">
+        <button class="button" onclick="filter()">Filter</button>
+      </div>
+    </div>
+
+    <!--Games-->
+    <div id="games" class="mr-5 ml-5 mt-5"></div>
+
+    <!-- pagination-->
+    <div id="pagination" class="columns ml-6">
+      <div class="column" id="prevPageDiv">
+        <button class="button" id="prevPage" onclick="prevPage()"> &lt;&lt; </button> 
+      </div>
+      <div id="pageBtns" class="column has-text-centered"></div>
+      <div class="column" id="nextPageDiv">
+        <button class="button" id="nextPage" onclick="nextPage()"> &gt;&gt; </button> 
+      </div>
+    </div>
+    <br>
+    <br>
+ </body>
+<script src="/Sports Standings/Java Script/teamsJS.js"></script>
+</html>

@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Standings | WNBA</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+    <style>
+        .box{
+            width: 90%;
+            margin: auto;
+            margin-top: 20px;
+        }
+        #standings{
+            width: 100%;
+        }
+        a{
+            color: black;
+        }
+        a#article:hover{
+            text-decoration: underline;
+        }
+        h1.container{
+            text-align: center;
+        }
+        a#foot{
+            color: lightgray;
+        }
+        @media (max-width: 630px){
+            #responsive{
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body class="has-background-light" onload="loadTeams();">
+    <nav class="navbar is-dark" role="navigation" aria-label="main navigation"> <!--not responsive, when page shrinks the header is too small for the page-->
+        <div class="navbar-brand">
+          <a class="navbar-item" href="standings.html">
+            <img src="/Sports Standings/img/wnba-secondary-logo.svg" width="112" height="28">
+          </a>
+      
+          <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+          </a>
+        </div>
+      
+        <div id="navbarBasicExample" class="navbar-menu">
+          <div class="navbar-start">
+            <a href="standings.html" class="navbar-item">
+              Standings
+            </a>
+      
+            <a href="admin.html" class="navbar-item">
+              Admin
+            </a>
+      
+            <div class="navbar-item has-dropdown is-hoverable">
+              <a class="navbar-link">
+                Teams
+              </a>
+
+              <div class="navbar-dropdown">
+                <a href="teams.html?id=9" class="navbar-item">
+                    <img src="/Sports Standings/img/dream.png" class="image is-24x24" alt="">
+                    <p class="pl-2">Atlantis Dream</p>
+                </a>
+                <a href="teams.html?id=1" class="navbar-item">
+                    <img src="/Sports Standings/img/Sky.png" class="image is-24x24" alt="">
+                    <p class="pl-2">Chicago Sky</p>
+                </a>
+                <a href="teams.html?id=2" class="navbar-item">
+                    <img src="/Sports Standings/img/Sun.png" class="image is-24x24" alt="">
+                    <p class="pl-2">Conneticut Sun</p>
+                </a>
+                <a href="teams.html?id=5" class="navbar-item">
+                    <img src="/Sports Standings/img/wings.png" class="image is-24x24" alt="">
+                    <p class="pl-2">Dallas Wings</p>
+                </a>
+                <a href="teams.html?id=11" class="navbar-item">
+                    <img src="/Sports Standings/img/fever.png" class="image is-24x24" alt="">
+                    <p class="pl-2">Indiana Fever</p>
+                </a>
+                <a href="teams.html?id=12" class="navbar-item">
+                    <img src="/Sports Standings/img/Aces.png" class="image is-24x24" alt="">
+                    <p class="pl-2">Las Vegas Aces</p>
+                </a>
+                <a href="teams.html?id=10" class="navbar-item">
+                    <img src="/Sports Standings/img/sparks.png" class="image is-24x24" alt="">
+                    <p class="pl-2">Los Angeles Sparks</p>
+                </a>
+                <a href="teams.html?id=8" class="navbar-item">
+                    <img src="/Sports Standings/img/lynx.png" class="image is-24x24" alt="">
+                    <p class="pl-2">Minnesota Lynx</p>
+                </a>
+                <a href="teams.html?id=6" class="navbar-item">
+                    <img src="/Sports Standings/img/liberty.png" class="image is-24x24" alt="">
+                    <p class="pl-2">New York Liberty</p>
+                </a>
+                <a href="teams.html?id=7" class="navbar-item">
+                    <img src="/Sports Standings/img/mercury.png" class="image is-24x24" alt="">
+                    <p class="pl-2">Phoenix Mercury</p>
+                </a>
+                <a href="teams.html?id=3" class="navbar-item">
+                    <img src="/Sports Standings/img/storm.png" class="image is-24x24" alt="">
+                    <p class="pl-2">Seattle Storm</p>
+                </a>
+                <a href="teams.html?id=4" class="navbar-item">
+                    <img src="/Sports Standings/img/mystics.png" class="image is-24x24" alt="">
+                    <p class="pl-2">Washington Mystics</p>
+                </a>
+              </div>
+            </div>
+          </div>
+          </div>
+        </div>
+      </nav>
+
+    <!--standings-->
+    <div class="box p-1">
+        <table id="standings" class="table is-striped">
+            <thead>
+                <tr>
+                    <th></th>
+                    <th onclick="sort('Name');">Name</th>
+                    <th onclick="sort('W')">Wins</th>
+                    <th onclick="sort('L')">Losses</th>
+                    <th onclick="sort('PCT');">PCT</th>
+                    <th onclick="sort('GB');">GB</th>
+                    <th id="responsive" onclick="sort('HOME');">Home</th>
+                    <th id="responsive" onclick="sort('ROAD');">Road</th>
+                    <th id="responsive"onclick="sort('STREAK');">Streak</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+    </div>
+
+    <!--articles-->
+    <div class="p-4">
+        <h1 id="recentArticles" class="is-size-2 container">Recent Articles</h1>
+    </div>
+
+    <ul class="columns m-4">
+        <li class="column">
+            <div class="card">
+                <a id="article" href="https://www.wnba.com/news/the-2023-wnba-draft-lottery-primer/">
+                    <div class="card-image">
+                    <figure class="image is-4by3">
+                        <img src="img/article1.png" alt="">
+                    </figure>
+                    </div>
+                    <div class="card-content">
+                    <div class="media">
+                        <div class="media-content">
+                        <p class="title is-4">The 2023 WNBA Draft Lottery Primer</p>
+                        <p class="subtitle is-6">Mark Schindler</p>
+                        </div>
+                    </div>
+                
+                    <div class="content">
+                        The next proverbial piece on the chessboard to shift is November 11th, as the 2023 WNBA Draft Lottery presented by State Farm will take place before South Carolina vs. Maryland.
+                        <br>
+                        <time>October 31, 2022</time>
+                    </div>
+                    </div>
+                </a>
+            </div>
+        </li>
+        <li class="column">
+            <div class="card">
+                <a id="article" href="https://www.wnba.com/news/indiana-fever-win-top-pick-in-2023-wnba-draft-presented-by-state-farm/">
+                    <div class="card-image">
+                    <figure class="image is-4by3">
+                        <img src="img/article2.png" alt="">
+                    </figure>
+                    </div>
+                    <div class="card-content">
+                    <div class="media">
+                        <div class="media-content">
+                        <p class="title is-4">Indiana Fever Win Top Pick in 2023 WNBA Draft Presented by State Farm®</p>
+                        <p class="subtitle is-6">Official release</p>
+                        </div>
+                    </div>
+                
+                    <div class="content">
+                        The Indiana Fever won the first overall draft pick in the 2023 WNBA Draft Presented by State Farm®.
+                        <br>
+                        <time>November 11, 2022</time>
+                    </div>
+                    </div>
+                </a>
+              </div>
+        </li>
+        <li class="column">
+            <div class="card">
+                <a id="article" href="https://www.wnba.com/news/new-york-libertys-betnijah-laney-earns-dawn-staley-community-leadership-award/">
+                    <div class="card-image">
+                    <figure class="image is-4by3">
+                        <img src="img/article3.jpg" alt="Placeholder image">
+                    </figure>
+                    </div>
+                    <div class="card-content">
+                    <div class="media">
+                        <div class="media-content">
+                        <p class="title is-4">New York Liberty's Betnijah Laney Earns Dawn Staley Community Leadership Award</p>
+                        <p class="subtitle is-6">Official Release</p>
+                        </div>
+                    </div>
+                
+                    <div class="content">
+                        Betnijah Laney of the New York Liberty is the recipient of the 2022 Dawn Staley Community Leadership award.
+                        <br>
+                        <time>November 18, 2022</time>
+                    </div>
+                    </div>
+                </a>
+            </div>
+        </li>
+    </ul>
+
+    <!--footer-->
+    <footer class="has-background-grey-darker has-text-light">
+        <div class="columns">
+            <div class="column is-one-quarter"></div>
+            <div class="column is-one-quarter has-text-centered has-text-light"><a id="foot" href="https://twitter.com/WNBA">Twitter</a></div> <!--text isn't right colour-->
+            <div class="column is-one-quarter has-text-centered has-text-light"><a id="foot" href="https://www.instagram.com/wnba/?hl=en">Instagram</a></div>
+            <div class="column is-one-quarter"></div>
+        </div>
+        <p class="has-text-centered">Copyright &copy; 2022</p>
+    </footer>
+</body>
+<script src="/Sports Standings/Java Script/standingsJS.js"></script>
+</html>
