@@ -1,0 +1,38 @@
+function (p1, p2) { //performs a task
+    //must return something at the end
+}
+
+let a = 3 //let statement declares variable
+
+item.classList.add('apple') //adds a class to an existing item 
+
+.includes()// is like contains. returns true or false
+
+.querySelector() // selects first element of that type
+/**descriptions:
+- ('#itemName') - TO FIND ID USE #
+- ('.myClass) - TO FIND A CLASS USE .
+- ('div.myClass') - DIV WITH CLASS
+ */
+
+.querySelectorAll()// selects ALL elements of that type
+
+.append() //adds item to the end of the list
+//Example:
+fruits = ["apple", "banana", "cherry"]
+fruits.append("orange")
+print(fruits)
+
+//returns 
+// ['apple', 'banana', 'cherry', 'orange']
+
+array.forEach(element => {
+    
+});
+
+
+
+/**in css styling:
+- !important overwrites whatever is previously written
+
+ */

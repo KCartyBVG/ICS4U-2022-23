@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+</head>
+<body>
+    <div>
+        <table id="standings" class="table is-striped">
+            <thead> <!--table header-->
+                <tr> <!--table row-->
+                    <th onclick="sort('Name');">Name</th>
+                    <th>Wins</th>
+                    <th>Losses</th>
+                    <th onclick="sort('PTS');">Points</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+    </div>
+</body>
+
+<script>
+    const dataString = '[{"Name":"Toronto", "w":8, "L":3,"PTS":17},{"Name":"Montreal", "w":10, "L":4,"PTS":20},{"Name":"New York", "w":7, "L":5,"PTS":6},{"Name":"Buffalo", "w":11, "L":5,"PTS":13},{"Name":"New Jersey", "w":6, "L":6,"PTS":4}]';
+
+    teams = JSON.parse(dataString);
+
+    // console.log(teams);
+
+    createTable(teams);
+
+    function createTable(teams){
+        let tableBody = document.querySelector('#standings tbody');
+
+        tableBody.replaceChildren();
+
+        teams.forEach((team) => {
+            const row = document.createElement('tr'); //every team gets its own row
+            let cell = document.createElement('td'); //creating four cells in each row
+            cell.textContent = team.Name;
+            row.appendChild(cell);
+
+            cell = document.createElement('td'); 
+            cell.textContent = team.w;
+            row.appendChild(cell);
+
+            cell = document.createElement('td'); 
+            cell.textContent = team.L;
+            row.appendChild(cell);
+
+            cell = document.createElement('td'); 
+            cell.textContent = team.PTS;
+            row.appendChild(cell);
+
+            tableBody.appendChild(row);
+        });
+    }
+
+
+    function sort(field) {
+        if (field === 'Name') {
+            teams = teams.sort((teamA, teamB) => {
+                return (teamA.Name < teamB.Name) ? -1 : 1}) // if other way around, change to >
+        } else if (field === 'PTS'){
+            teams = teams.sort((teamA, teamB) => teamA.PTS - teamB.PTS) // if other way around, change order
+        }
+        createTable(teams);
+    }
+</script>
+</html>
