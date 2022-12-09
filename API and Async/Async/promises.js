@@ -43,12 +43,26 @@ function createPost(post) {
 // init();
 
 //Async / Await / Fetch
+
+//f we are using await we need to define the function as asynchronous (async)
+// async function fetchUsers() {
+//     const res = await fetch('https://jsonplaceholder.typicode.com/users')
+//     // await waits for the asynchronous repeat to be made and then stores the response in res
+
+//     const data = await res.json();
+
+//     console.log(data);
+// }
+// fetchUsers();
+
+
 async function fetchUsers() {
-    const res = await fetch('https://jsonplaceholder.typicode.come/users')
-
-    const data = await res.json();
-
-    console.log(data);
+    // fetch('https://jsonplaceholder.typicode.com/users').then((res)=> {
+    //     console.log(res.json())
+    // })
+    const res = fetch('https://jsonplaceholder.typicode.com/users').then(res => {
+        return res.json()
+    }).then(body => console.log(body));
 }
 fetchUsers();
 
@@ -59,7 +73,7 @@ fetchUsers();
 // const promise3 = new Promise((resolve, reject) =>
 // setTimeout(resolve, 2000, 'Goodbye'));
 
-// const promise4 = fetch('https://jsonplaceholder.typicode.come/users').then(res =>
+// const promise4 = fetch('https://jsonplaceholder.typicode.com/users').then(res =>
 // res.json());
 
 // Promise.all([promise1, promise2, promise3, promise4]).then(values =>

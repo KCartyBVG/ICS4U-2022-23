@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Text Me</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+    <style>
+        textarea{
+            width: 80%;
+        }
+        #remove{
+            width: 80%;
+            margin: auto;
+        }
+
+    </style>
+
+</head>
+<body id="body">
+    <div action="" class="container m-auto">
+        <header class="title">Send a Text</header>
+        <input class="input" type="number" id="number" placeholder="Insert Number Here, Ex. 416 123 4567">
+        <br>
+        <br>
+        <textarea class="textarea" placeholder="Insert Message Here" id="text" cols="30" rows="10"></textarea>
+        <br>
+        <button onclick="send();" class="button">Send Message</button>
+    </div>
+
+    <script>
+        function send() {
+
+            let number = document.getElementById('number').value
+            let body = document.getElementById('text').value
+
+            if (number.toString().length > 10 || number.toString().length < 10) {
+                let notif = document.createElement('div')
+                notif.classList.add('notification', 'is-danger','is-light')
+                notif.setAttribute('id','remove')
+                const del = document.createElement('button')
+                del.classList.add('delete')
+                notif.textContent = "Not a valid phone number"
+                const body = document.getElementById('body')
+                notif.appendChild(del)
+                body.appendChild(notif)
+                del.setAttribute('onclick',"this.parentElement.style.display='none'")
+            } else if (body === "") {
+                let notif = document.createElement('div')
+                notif.classList.add('notification', 'is-danger','is-light')
+                notif.setAttribute('id','remove')
+                const del = document.createElement('button')
+                del.classList.add('delete')
+                notif.textContent = "Please insert a message"
+                const body = document.getElementById('body')
+                notif.appendChild(del)
+                body.appendChild(notif)
+                del.setAttribute('onclick',"this.parentElement.style.display='none'")
+            } else {
+               sendText();
+            }
+        }
+
+        async function sendText() {
+                    let number = document.getElementById('number').value
+                    let body = document.getElementById('text').value
+                    var myHeaders = new Headers();
+
+                    // const credentials = btoa('AC1e08516c9893d1b7f0be96a6c9049a63:471b73834c22659fa7365613def90f61')
+                    myHeaders.append("Authorization", `Basic ${credentials}`);
+                    myHeaders.append("Content-Type", "application/x-www-form-urlencoded"); 
+
+                    number = '+1' + number;
+                    var urlencoded = new URLSearchParams();
+                    urlencoded.append("To", number);
+                    urlencoded.append("From", "+15628372939");
+                    urlencoded.append("Body", body);
+
+                    var requestOptions = {
+                        method: 'POST',
+                        headers: myHeaders,
+                        body: urlencoded,
+                        redirect: 'follow'
+                    };
+                    fetch("https://api.twilio.com/2010-04-01/Accounts/AC1e08516c9893d1b7f0be96a6c9049a63/Messages.json", requestOptions)
+                    .then(response => response.text())
+                    .then(result => console.log(result))
+                    .catch(error => console.log('error', error));
+
+
+                    // async function sendText() {
+                    //     await fetch ("https://api.twilio.com/2010-04-01/Accounts/AC1e08516c9893d1b7f0be96a6c9049a63/Messages.json", requestOptions)
+                    //     await (respone => respone.text())
+                    //     await (result => console.log(result))
+                    // }
+        }
+    </script>
+</body>
+</html>
