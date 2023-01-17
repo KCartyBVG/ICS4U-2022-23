@@ -110,4 +110,25 @@ public class IntLinkedList {
  
        return result;
     }
+
+    public Integer get(int index) {
+      if (index < 0)
+         throw new IndexOutOfBoundsException("Invalid index " + index + "must be greater than 0");
+
+      if (head == null)
+         throw new IllegalStateException("Can't get an elemenet from an empty list");
+      else if (index > size()) {
+         throw new IndexOutOfBoundsException("Invalid index " + index + " max index is " + (size()-1));
+      }else {
+         IntNode curr = head;
+         for (int i = 0; i < index; i++) {
+            curr = curr.getLink();
+         }
+
+         return curr.getData();
+      }
+    }
+
+
+
  }

@@ -1,31 +1,26 @@
 public class IntLLStack {
-    private IntLLStack data;
-    private int top = data.size();
-
+    private IntLinkedList data;
+    private int top;
 
     public IntLLStack() {
-        data = this.//IS IT AN ARRAY OR INT STACK??
+        data = new IntLinkedList();
+        top = -1;
     }
 
     public void push(Integer el){
         data.add(el);
+        top++;
     }
 
     public Integer pop(){
         if (data.isEmpty()) {
             return null;
         } else {
-            IntNode curr = data.head.getData(); //HOW TO ACCESS THE INDEX OF THE LIST??
-            Integer temp;
-            for (int i = 0; i <= top; i++) {
-                curr = curr.getLink();
-                temp = curr.getData();
-              }
-                
-              data.remove(temp);
-              return temp;
+            Integer temp = data.get(top);
+            data.remove(temp);
+            top--;
+            return temp;
         }
-        
     }
 
     public Integer search(Integer el){
@@ -33,25 +28,42 @@ public class IntLLStack {
             return null;
         }
 
-        while (el != data.get(top)); //how to get index
+        Integer index = -1;
+
+        for (int i = 0; i <= top; i++) {
+            if (data.get(i) == el)
+                index = i;
+        }
+
+        if (index == -1)
+            return null;
+        else
+            return top - index;
     }
 
-    public boolean empty(){
-        return data.isEmpty(); //using the already made methods?
-        
-        /**
-         * return data.
-         */
+    public boolean isEmpty(){
+        return data.isEmpty();
     }
 
     public Integer peek(){
-        Integer temp;
-        for (int i = 0; i <= top; i++) {
-            if (i == top) {
-                temp = //AGAIN HOW TO GET THAT INDEX FROM THE LIST
-            }
-        }
-        return temp;
+        if (data.isEmpty())
+            return null;
+        return data.get(top);
     }
+
+    public String toString() {
+        String result = "{";
+
+        for (int i = 0; i <= top; i++) {
+            result += data.get(i) + ", ";
+        }
+  
+        if (!isEmpty()) {
+           result = result.substring(0, result.length() - 2);
+        }
+        result += "}";
+  
+        return result;
+     }
 
 }

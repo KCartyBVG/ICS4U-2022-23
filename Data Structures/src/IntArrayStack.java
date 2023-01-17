@@ -8,41 +8,39 @@ public class IntArrayStack {
     private int top;
     private Integer[] data;
 
-
     public IntArrayStack(){
         data = new Integer[DEFAULT_CAPACITY];
-        top = 0;
+        top = -1;
     }
 
-    public void push(Integer el){
-        if (data[top] == null) {        
-            Integer newarr[] = new Integer[data.length + 1];
-            newarr[0]=el;
-            data = newarr;
-        } else {
-            top++;  
-            data[top] = el;
+    public void push(Integer el) {
+        if (top + 1 == data.length) {
+           Integer[] temp = new Integer[data.length * 2];
+           for (int i = 0; i < data.length; i++) {
+              temp[i] = data[i];
+           }
+           data = temp;
         }
-        // for (int i = 0; i < newarr.length; i++) {
-        //     newarr[i+1] = data[i];  
-        // }   
-    }   
+        top++;
+        data[top] = el;
+     }
     
-    public Integer pop(){
-        Integer temp = data[top];
-        data[top] = null;
-        top--;
-
-        return temp;
-    }
-
-    public Integer peek() {
-        if (top <0) {
-            return null;
+     public Integer pop() {
+        if (top < 0) {
+           return null;
         } else {
-            return data[top];// check this
+           top--;
+           return data[top + 1];
         }
-    }
+     }
+
+     public Integer peek() {
+        if (top < 0) {
+           return null;
+        } else {
+           return data[top];
+        }
+     }
 
     public Integer search(Integer el){
         int index = 0;
@@ -60,11 +58,8 @@ public class IntArrayStack {
             return top-index;
     }
 
-    public boolean empty(){
-        if(data[0] ==null) {
-            return true;
-        } else 
-            return false;
+    public boolean isEmpty() {
+        return top < 0;
     }
 
     public String toString() {
@@ -74,7 +69,7 @@ public class IntArrayStack {
            result += data[index] + ", ";
         }
   
-        if (!empty()) {
+        if (!isEmpty()) {
            result = result.substring(0, result.length() - 2);
         }
         result += "]";
