@@ -7,7 +7,8 @@ import EventService from '@/services/EventService.js'
 const events = ref(null)
  
 onMounted(() => {
-  EventService.getEvents()
+  axios
+    .get('https://my-json-server.typicode.com/Code-Pop/Real-World_Vue-3/events')
     .then((response) => {
       events.value = response.data
     })
