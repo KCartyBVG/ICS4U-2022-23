@@ -1,14 +1,12 @@
 <script setup>
 import { ref, onMounted } from 'vue'
 import EventCard from '@/components/EventCard.vue'
-import axios from 'axios'
 import EventService from '@/services/EventService.js'
  
 const events = ref(null)
  
 onMounted(() => {
-  axios
-    .get('https://my-json-server.typicode.com/Code-Pop/Real-World_Vue-3/events')
+ EventService.getEvents()
     .then((response) => {
       events.value = response.data
     })
@@ -20,12 +18,14 @@ onMounted(() => {
 </script>
  
 <template>
+  <div>
   <h1>Events For Good</h1>
   <div>
     <div class="events">
       <EventCard v-for="event in events" :key="event.id" :event="event" />
     </div>
   </div>
+</div>
 </template>
 
 <style scoped>
